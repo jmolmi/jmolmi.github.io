@@ -1,0 +1,320 @@
+$global: 0;
+$globalCaja:border-box;
+$defaultColor: #ffffff;
+$none: none;
+
+@mixin sizes($width, $height){
+    width:$width;
+    height:$height;
+}
+
+*{
+    box-sizing: $globalCaja;
+    margin: $global;
+    padding: $global;
+}
+
+body{
+    font-family: "Oswald", sans-serif;
+    background-color: #000000;
+    /* Pattern from https://www.heropatterns.com/ */
+    background-image: linear-gradient(to top, #640064, #520343, #3b0829, #230916, #000000);
+    /* background-image: radial-gradient(circle, #f2a4f6, #b875aa, #7c4c68, #3f2832, #000000); */
+    color: #1e272e;
+    color: $defaultColor;
+    font-size: 16px;
+}
+
+a{
+    color: $defaultColor;
+    text-decoration: $none;
+
+}
+
+ul{
+    list-style: $none;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+// navigation
+
+hr {
+    margin: 10px 0;
+  }
+
+// Responsive Button 
+.menu-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  z-index: 2;
+  display: none;
+}
+
+
+
+
+// shocase
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    border: $global;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #262626;
+    color: $defaultColor;
+    font-size: 15px;
+    border: 1px solid $defaultColor;
+    &:hover{
+        opacity: 0.9;
+    }
+}
+
+.showcase{
+    @include sizes(100%,550px);
+    background: url("img/logo.jpeg") no-repeat center ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+    color: #fff;
+
+    h2,p{
+        margin-top: 10px
+
+     
+        
+    }
+    .btn{
+        margin-top: 20px;
+    }
+
+  
+}
+
+// news cards
+
+.news-cards {
+    img{
+        @include sizes(100%, 180px);
+    
+    }
+    h3{
+        font-size: 20px;
+        margin: 10px $global;
+    }
+
+    a{
+        padding: 10px $global;
+        color:$defaultColor;
+        text-transform: uppercase;
+        display: inline-block;
+        font-weight: bold;
+    }
+}
+
+
+
+
+.news-cards2{
+    @extend .news-cards;
+    a{
+        color: skyblue;
+    }
+}
+// registro
+.form-registro{
+    width: 400px;
+    background-image: url(img/logo.jpeg );
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+    h4{
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+      p{
+        height: 40px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 40px; 
+      }
+      a{
+        color: white;
+        text-decoration: none;
+        &:hover{
+            color: white;
+            text-decoration: underline;
+        }
+    }
+    .botones{
+        width: 100%;
+        background: #7a1775;
+        border: none;
+        padding: 12px;
+        color: white;
+        margin: 16px 0;
+        font-size: 16px;
+        &:hover{
+            background: #a11b9b;
+            transition: background-color 1s ease-out;
+            outline: 0;
+        }
+    }
+    
+
+}
+.controles{
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #831d75;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+  }
+// contacto
+
+.contenedor{
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em;
+ 
+}
+ul{
+    list-style: none;
+    padding:$global;
+}
+
+.logo{
+    text-align: center;
+    font-size: 50px;
+
+}
+.contact-contenido{
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+    > *{
+        padding: 1em;
+    }
+}
+
+.contact-formu{
+    background-color: #362838;
+    form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        label{
+            display: block;
+        }
+        p{
+            margin: $global;
+            padding: 16px;
+        }
+        .block{
+            grid-column: 1 / 3;
+        }
+        button, input, textarea {
+            width: 100%;
+            padding: .7em;
+            border: none;
+            background: none;
+            outline: 0;
+            color: #fff;
+            border-bottom: 1px solid #9d3d76db;
+        }
+
+        button{
+            background: #520343; 
+            border: 0;
+            text-transform: uppercase;
+            padding: 1em;
+            &:hover, &:focus{
+                background:#741e5a;
+                color: #fff;
+                transition: background-color 1s ease-out;
+                outline: 0;
+            }
+        }
+  
+
+        
+
+    }
+}
+// info de contacto
+
+.contact-info{
+    background: #000000;
+    h4,ul,p{
+        text-align: center;
+        margin: 0 0 1rem 0;
+    }
+}
+
+
+
+// follow
+
+.social{
+    margin: 50px;
+    p{
+        text-align: center;
+        font-size: 30px;
+        margin-bottom:20px;
+    }
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+        margin: $global 30px;
+
+        i{
+            font-size: 3rem;
+        }
+    }
+}
+
+.footer {
+    background: #2f3640;
+    color: #616161;
+    font-size: 12px;
+    padding: 20px $global;
+    text-align: center;
+    font-size: 1rem;
+    padding-bottom: 20px;
+  }
+
+
+// responsive
+
+@media (min-width: 700px){
+    .menu-btn{
+        display: block;
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+    .contact-contenido{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+}
